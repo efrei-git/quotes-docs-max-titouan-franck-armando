@@ -9,6 +9,8 @@ Solutions de l'évaluation notée 2 du groupe [nom-groupe] à l'aide de MkDocs.
 - `contributeur 2` CONQUERE DE MONBRISON Titouan
 - `contributeur 3` HUANG Franck
 
+-
+
 ## URLs des dépôts
 
 - `initiateur` : https://github.com/efrei-git/quotes-docs-max-titouan-franck-armando

@@ -1,6 +1,6 @@
 # Documentation Programming Quotes [nom-groupe]
 
-Programming Quotes est petite application qui permet d'afficher des citations humouristique de programmeurs. 
+Programming Quotes est petite application qui permet d'afficher des citations humouristique de programmeurs.
 
 ## Membres du groupe
 
@@ -8,3 +8,5 @@ Programming Quotes est petite application qui permet d'afficher des citations hu
 - `contributeur 1` DAPA Solofoniaina Armando
 - `contributeur 2` CONQUERE DE MONBRISON Titouan
 - `contributeur 3` HUANG Franck
+
+-
