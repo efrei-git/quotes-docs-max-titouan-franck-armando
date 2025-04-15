@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Features - Documentation Programming Quotes Max-Titouan-Franck-Armando</title>
+        <title>Core Functions - Documentation Programming Quotes Max-Titouan-Franck-Armando</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -38,10 +38,10 @@
                                 <a href=".." class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">Features</a>
+                                <a href="../features/" class="nav-link">Features</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../functions/" class="nav-link">Core Functions</a>
+                                <a href="./" class="nav-link active" aria-current="page">Core Functions</a>
                             </li>
                         </ul>
 
@@ -52,12 +52,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../features/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../functions/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -79,22 +79,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="2"><a href="#main-files" class="nav-link">Main files</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-bs-level="2"><a href="#usage" class="nav-link">Usage</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-bs-level="2"><a href="#features-and-commands" class="nav-link">Features and commands</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-bs-level="2"><a href="#example" class="nav-link">Example</a>
+            <li class="nav-item" data-bs-level="2"><a href="#core-functions" class="nav-link">Core functions</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -103,37 +88,122 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="main-files">Main files</h2>
-<ul>
-<li><code>main.py</code> : Main file of the application.</li>
-<li><code>quotes.txt</code> : File containing the quotes.</li>
-<li><code>functions.py</code> : File containing the functions used in the application.</li>
-</ul>
-<hr />
-<h2 id="usage">Usage</h2>
-<p>Clone the repository and run the following command to start the application:</p>
-<pre><code class="language-bash">$ git clone &lt;url-du-TP4/quotes&gt;
-$ cd quotes
-$ python main.py
+<h2 id="core-functions">Core functions</h2>
+<h3 id="file-functionspy">File <code>functions.py</code></h3>
+<h4 id="load_quotesfilename"><code>load_quotes(filename)</code></h4>
+<pre><code class="language-python">def load_quotes(filename):
+    &quot;&quot;&quot;
+    Loads quotes from a file and returns them as a list.
+    Parameters:
+    filename (str): The path to the file containing quotes.
+    The function reads the file line by line, strips whitespace, and appends
+    non-empty lines to a list. Each line in the file should contain one quote.
+    Returns:
+    list: A list of quotes loaded from the file.
+    Example:
+    load_quotes('quotes.txt')
+    This function reads the file 'quotes.txt' and returns a list of quotes.
+    &quot;&quot;&quot;
+    quotes = []
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+    for line in lines:
+        line = line.strip()
+        if line:
+            quotes.append(line)
+    return quotes
 </code></pre>
-<hr />
-<h2 id="features-and-commands">Features and commands</h2>
-<ul>
-<li><code>random</code>  : Get a random programming quote  </li>
-<li><code>display</code> : Display multiple quotes  </li>
-<li><code>add</code>     : Add a new quote to your collection  </li>
-<li><code>exit</code>    : Exit anytime</li>
-</ul>
-<hr />
-<h2 id="example">Example</h2>
-<pre><code class="language-bash">$ python main.py
-==== Programming Quotes ====
-random : Random quote
-display : Display quotes
-add : Add a new quote
-exit : Exit the program
-&gt;&gt; random
-Why do programmers prefer dark chocolate? Because it's byte-sized!
+<h3 id="random_quotequotes"><code>random_quote(quotes)</code></h3>
+<pre><code class="language-python">def random_quote(quotes):
+    &quot;&quot;&quot;
+    Returns a random quote from the provided list of quotes.
+    Parameters:
+    quotes (list): A list of quotes from which a random quote will be selected.
+    The function uses the random.choice() method to select a random quote.
+    Returns:
+    str: A randomly selected quote from the list.
+    Example:
+    random_quote(['Quote 1', 'Quote 2', 'Quote 3'])
+    This function returns a random quote from the provided list.
+    &quot;&quot;&quot;  
+    random_quote = random.choice(quotes)
+    return random_quote
+</code></pre>
+<h3 id="print_quotequote"><code>print_quote(quote)</code></h3>
+<pre><code class="language-python">def print_quote(quote):
+    &quot;&quot;&quot;
+    Prints a single quote to the console.
+    Parameters:
+    quote (str): The quote to be printed.
+    The function formats the quote with asterisks and prints it to the console.
+    Returns:
+    None
+    Example:
+    print_quote('This is a quote.')
+    &quot;&quot;&quot;
+print(quote)
+</code></pre>
+<pre><code class="language-python">def view_quotes(quotes):
+    &quot;&quot;&quot;
+    Prints all quotes in the provided list to the console.
+    Parameters:
+    quotes (list): A list of quotes to be printed.  
+    The function iterates through the list and prints each quote using the
+    Returns:
+    None
+    Example:
+    view_quotes(['Quote 1', 'Quote 2', 'Quote 3'])
+    This function prints each quote in the provided list.
+    &quot;&quot;&quot;
+    for quote in quotes:
+        print_quote(quote)
+</code></pre>
+<h3 id="add_quotequotes-filename"><code>add_quote(quotes, filename)</code></h3>
+<pre><code class="language-python">def add_quote(quotes, filename):
+    &quot;&quot;&quot;
+    Adds a new quote to the list of quotes and appends it to a file.
+    Parameters:
+    quotes (list): A list of existing quotes to which the new quote will be added.
+    filename (str): The path to the file where the new quote will be appended.
+    The function prompts the user to input a new quote, appends it to the provided
+    list of quotes, and writes it to the specified file. Each quote is written on
+    a new line in the file.
+    Returns:
+    None
+    Example:
+    add_quote(['Quote 1', 'Quote 2'], 'quotes.txt')
+    &quot;&quot;&quot;
+    new_quote = input(&quot;Enter a new quote: &quot;)
+    quotes.append(new_quote)
+    with open(filename, 'a') as file:
+        file.write(new_quote)
+        file.write('\n')
+    print(&quot;Quote added successfully!&quot;)
+</code></pre>
+<h3 id="display_quotesquotes-count"><code>display_quotes(quotes, count)</code></h3>
+<pre><code class="language-python">def display_quotes(quotes, count):
+    &quot;&quot;&quot;
+    Displays a specified number of quotes from the provided list.
+    Parameters:
+    quotes (list): A list of quotes to be displayed.
+    count (int): The number of quotes to display. If count is greater than the
+    length of the list, all quotes will be displayed.
+    The function checks if the count is valid and prints the specified number
+    of quotes. If the count exceeds the number of available quotes, it prints
+    all quotes.
+    Returns:
+    None
+    Example:
+    display_quotes(['Quote 1', 'Quote 2', 'Quote 3'], 2)
+    This function prints the first 2 quotes from the provided list.
+    &quot;&quot;&quot;
+    if count &gt;= len(quotes):
+        print(&quot;All Quotes:&quot;)
+        view_quotes(quotes)
+    else:
+        print(f&quot;First {count} Quotes:&quot;)
+        for i in range(count):
+            print_quote(quotes[i])
 </code></pre></div>
             </div>
         </div>
