@@ -5,7 +5,7 @@ Solutions de l'évaluation notée 2 du groupe [nom-groupe] à l'aide de MkDocs.
 ## Membres du groupe
 
 - `initiateur` : SILVA DOS REIS Max
-- `contributeur 1` DAPA Armando
+- `contributeur 1` DAPA Solofoniaina Armando
 - `contributeur 2` CONQUERE DE MONBRISON Titouan
 - `contributeur 3` HUANG Franck
 
