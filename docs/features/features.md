@@ -11,7 +11,7 @@
 Clone the repository and run the following command to start the application:
 
 ```bash
-$ git clone https://github.com/efrei-git/quotes-docs-max-titouan-franck-armando
+$ git clone https://github.com/Sh3tys/quotes-cdm-par01
 $ cd quotes
 $ python main.py
 ```
