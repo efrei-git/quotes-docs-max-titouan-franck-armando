@@ -11,7 +11,7 @@
 Clone the repository and run the following command to start the application:
 
 ```bash
-$ git clone <url-du-TP4/quotes>
+$ git clone https://github.com/efrei-git/quotes-docs-max-titouan-franck-armando
 $ cd quotes
 $ python main.py
 ```
