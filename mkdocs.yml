@@ -3,3 +3,4 @@ site_name: Documentation Programming Quotes Max-Titouan-Franck-Armando
 nav:
   - Home: index.md
   - Features: features.md
+  - Core Functions: functions.md
